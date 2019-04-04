@@ -65,12 +65,18 @@ if __name__ == '__main__':
     logit = arcface_loss(embedding=emb, labels=labels, w_init=w_init_method, out_num=num_classes)
     # inference_loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logit, labels=labels))
 
+    var_list = tf.trainable_variables()
+    g_list = tf.global_variables()
+    bn_moving_vars = [g for g in g_list if 'moving_mean' in g.name]
+    bn_moving_vars += [g for g in g_list if 'moving_variance' in g.name]
+    var_list += bn_moving_vars
+
     config = tf.ConfigProto()
     config.allow_soft_placement = True
     config.gpu_options.allow_growth = True
 
     counter = 0
-    saver = tf.train.Saver()
+    saver = tf.train.Saver(var_list=var_list)
     with tf.Session(config=config) as sess:
     	saver.restore(sess, opt.face_ckpt)
     	feed_dict = {}

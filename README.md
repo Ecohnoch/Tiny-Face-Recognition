@@ -37,10 +37,10 @@ $ python3 eval_veri.py --datasets '/data/ChuyuanXiong/up/face/faces_emore/cfp_fp
 
 Datasets|backbone| loss|steps|batch_size|acc
 -------|--------|-----|---|-----------|----|
-lfw    | resnet50 | ArcFace | 78900 | 64 | 0.9741
-cfp_ff | resnet50 | ArcFace | 78900 | 64 | 0.9400
-cfp_fp | resnet50 | ArcFace | 78900 | 64 | 0.7713
-agedb_30| resnet50 | ArcFace | 78900|64 | 0.6852s
+lfw    | resnet50 | ArcFace | 78900 | 64 | 0.9903
+cfp_ff | resnet50 | ArcFace | 78900 | 64 | 0.9847
+cfp_fp | resnet50 | ArcFace | 78900 | 64 | 0.8797
+agedb_30| resnet50 | ArcFace | 78900|64 | 0.8991
 
 Limited by the training time, so I just release the half-epoch training results temporarily. The model will be optimized later.
 
