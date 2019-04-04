@@ -1,2 +1,3 @@
 # Tiny-Face-Recognition
-Extract an integrity flow from insightface_tf to do face recognition and verification.
+
+Extract an complete process from insightface_tf to do face recognition and verification.
